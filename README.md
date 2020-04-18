@@ -1,4 +1,20 @@
-# nbdev template
+# Fast Explorer
+> Work in progress
 
-Use this template to more easily create your nbdev project.
+
+`pip install your_project_name`
+
+## How to use
+
+Fill me in please! Don't forget code examples:
+
+```python
+1+1
+```
+
+
+
+
+    2
+
 
