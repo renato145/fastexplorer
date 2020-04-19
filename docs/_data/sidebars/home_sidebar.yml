@@ -10,8 +10,17 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Core
-      url: /core
+      title: Server
+      url: /server
+    - output: web,pdf
+      title: Representation
+      url: /representation
+    - output: web,pdf
+      title: Fast Explorer
+      url: /explorer
+    - output: web,pdf
+      title: Tutorial
+      url: /tutorial
     output: web
     title: fastexplorer
   output: web

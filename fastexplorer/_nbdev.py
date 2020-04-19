@@ -2,9 +2,17 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"testing": "00_core.ipynb"}
+index = {"Representation": "00_representation.ipynb",
+         "nn.Module.to_representation": "00_representation.ipynb",
+         "Learner.to_representation": "00_representation.ipynb",
+         "Representation.to_json": "00_representation.ipynb",
+         "logger": "01_explorer.ipynb",
+         "FastExplorer": "01_explorer.ipynb",
+         "close_client": "01_explorer.ipynb",
+         "Learner.fastexplorer": "01_explorer.ipynb"}
 
-modules = ["core.py"]
+modules = ["representation.py",
+           "explorer.py"]
 
 doc_url = "https://renato145.github.io/fastexplorer/"
 

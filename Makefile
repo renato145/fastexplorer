@@ -2,7 +2,7 @@ SRC = $(wildcard nbs/*.ipynb)
 
 all: fastexplorer docs
 
-nbdev: $(SRC)
+fastexplorer: $(SRC)
 	nbdev_build_lib
 	touch fastexplorer
 

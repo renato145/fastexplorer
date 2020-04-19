@@ -1,6 +1,9 @@
 {
   "fastexplorer": {
     "Overview": "/",
-    "Core": "/core"
+    "Server": "/server",
+    "Representation": "/representation",
+    "Fast Explorer": "/explorer",
+    "Tutorial": "/tutorial"
   }
 }
