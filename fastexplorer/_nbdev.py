@@ -3,8 +3,8 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"Representation": "00_representation.ipynb",
-         "nn.Module.to_representation": "00_representation.ipynb",
          "Learner.to_representation": "00_representation.ipynb",
+         "nn.Module.to_representation": "00_representation.ipynb",
          "Representation.to_json": "00_representation.ipynb",
          "logger": "01_explorer.ipynb",
          "FastExplorer": "01_explorer.ipynb",

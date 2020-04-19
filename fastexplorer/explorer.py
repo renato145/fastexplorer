@@ -52,7 +52,6 @@ async def close_client(websocket, msg):
 # Cell
 @patch
 @delegates(FastExplorer.__init__)
-def fastexplorer(self:Learner, **kwargs):
-    if not hasattr(self, 'explorer'): self.explorer = FastExplorer(self, **kwargs)
-    self.explorer = FastExplorer(self, **kwargs)
+def fastexplorer(self:Learner, reload=False, **kwargs):
+    if (not hasattr(self, 'explorer')) or reload: self.explorer = FastExplorer(self, **kwargs)
     self.explorer.serve()
