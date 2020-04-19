@@ -34,7 +34,7 @@ class FastExplorer:
         logging.info(f'Client connected: {msg}')
 
         # Manage requests
-        await websocket.send_json(self.representation.to_json())
+        await websocket.send_json({'event': 'representation_data', 'msg': self.representation.to_json()})
 
         # Close socket
 #         state[client_type] = False

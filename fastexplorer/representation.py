@@ -36,7 +36,7 @@ def to_representation(self:nn.Module, *xb):
 
     if isinstance(self, nn.Sequential):
         idxs = modules.map(lambda x: x['idx'])
-        links = idxs[:-1].map_zipwith(lambda a,b: {a:b}, idxs[1:])
+        links = idxs[:-1].map_zipwith(lambda a,b: {'source':a, 'target':b}, idxs[1:])
     else: raise NotImplementedError()
 
     return Representation(name, inp_shape, out_shape, modules, params, links, xtra)
@@ -75,4 +75,6 @@ def to_representation(self:Learner):
 # Cell
 @patch
 def to_json(self:Representation):
-    return json.dumps({'nodes':list(self.modules), 'links':list(self.links)})
+    nodes = list(self.modules)
+    links = list(self.links)
+    return json.dumps({'nodes':nodes, 'links':links})
