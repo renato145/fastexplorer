@@ -26,6 +26,21 @@ class FastExplorer:
 
     def __repr__(self): return f'{self.__class__.__name__} ()'
 
+    async def handle_web_client(self, websocket):
+        while True:
+            try:
+                msg = await websocket.receive_json()
+                logging.info(f'Client msg: {msg}')
+                await self.dispatch_event(websocket, msg)
+            except json.JSONDecodeError: logging.info('Invalid JSON received')
+            except WebSocketDisconnect: break
+
+    async def dispatch_event(self, websocket, msg):
+        event = msg['event']
+        if not hasattr(self, 'event'):
+            logging.info(f'Invalid event: {event}')
+            await websocket.send_json({'event': 'invalid_event', 'msg': event})
+
     async def endpoint(self, websocket):
         # Open socket
         await websocket.accept()
@@ -35,10 +50,9 @@ class FastExplorer:
 
         # Manage requests
         await websocket.send_json({'event': 'representation_data', 'msg': self.representation.to_json()})
+        await self.handle_web_client(websocket)
 
         # Close socket
-#         state[client_type] = False
-#         websocket_dict.pop(client_type)
         await close_client(websocket, 'Finalized by server')
         logging.info(f'Client closed: {msg}')
 
