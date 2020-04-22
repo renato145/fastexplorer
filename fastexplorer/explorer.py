@@ -20,7 +20,8 @@ class Events:
         for k,v in d.items(): setattr(self, k, v)
 
     def __repr__(self):
-        res = f'{self.__class__.__name__} ({self.__dict__})'
+        d = '\n'.join([f'  {k}: {v}' for k,v in self.__dict__.items()])
+        res = f'{self.__class__.__name__} (\n{d}\n)'
         return res
 
 clientEvents = Events({
