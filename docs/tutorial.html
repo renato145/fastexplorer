@@ -103,187 +103,11 @@ description: "TODO"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>INFO:     Started server process [22762]
+<pre>INFO:     Started server process [6787]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     (&#39;127.0.0.1&#39;, 35316) - &#34;WebSocket /ws&#34; [accepted]
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 153, in run_asgi
-    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py&#34;, line 45, in __call__
-    return await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/applications.py&#34;, line 102, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/middleware/errors.py&#34;, line 146, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/exceptions.py&#34;, line 58, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 550, in __call__
-    await route.handle(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 283, in handle
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 57, in app
-    await func(session)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 47, in endpoint
-    msg = await websocket.receive_json()
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 98, in receive_json
-    self._raise_on_disconnect(message)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 80, in _raise_on_disconnect
-    raise WebSocketDisconnect(message[&#34;code&#34;])
-starlette.websockets.WebSocketDisconnect: 1001
-INFO:     (&#39;127.0.0.1&#39;, 35434) - &#34;WebSocket /ws&#34; [accepted]
-INFO:     Client connected: {&#39;client&#39;: &#39;web_client&#39;}
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 153, in run_asgi
-    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py&#34;, line 45, in __call__
-    return await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/applications.py&#34;, line 102, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/middleware/errors.py&#34;, line 146, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/exceptions.py&#34;, line 58, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 550, in __call__
-    await route.handle(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 283, in handle
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 57, in app
-    await func(session)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 56, in endpoint
-    await close_client(websocket, &#39;Finalized by server&#39;)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 63, in close_client
-    await websocket.send_json({&#39;event&#39;: &#39;close&#39;, &#39;msg&#39;: msg})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 137, in send_json
-    await self.send({&#34;type&#34;: &#34;websocket.send&#34;, &#34;text&#34;: text})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 68, in send
-    await self._send(message)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 211, in asgi_send
-    await self.send(data)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 555, in send
-    await self.ensure_open()
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 803, in ensure_open
-    raise self.connection_closed_exc()
-websockets.exceptions.ConnectionClosedOK: code = 1001 (going away), no reason
-INFO:     (&#39;127.0.0.1&#39;, 35464) - &#34;WebSocket /ws&#34; [accepted]
-INFO:     Client connected: {&#39;client&#39;: &#39;web_client&#39;}
-INFO:     Client msg: {&#39;event&#39;: &#39;load_input&#39;}
-INFO:     Invalid event: load_input
-INFO:     Client msg: {&#39;event&#39;: &#39;load_input&#39;}
-INFO:     Invalid event: load_input
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 153, in run_asgi
-    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py&#34;, line 45, in __call__
-    return await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/applications.py&#34;, line 102, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/middleware/errors.py&#34;, line 146, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/exceptions.py&#34;, line 58, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 550, in __call__
-    await route.handle(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 283, in handle
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 57, in app
-    await func(session)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 56, in endpoint
-    await close_client(websocket, &#39;Finalized by server&#39;)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 63, in close_client
-    await websocket.send_json({&#39;event&#39;: &#39;close&#39;, &#39;msg&#39;: msg})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 137, in send_json
-    await self.send({&#34;type&#34;: &#34;websocket.send&#34;, &#34;text&#34;: text})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 68, in send
-    await self._send(message)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 211, in asgi_send
-    await self.send(data)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 555, in send
-    await self.ensure_open()
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 803, in ensure_open
-    raise self.connection_closed_exc()
-websockets.exceptions.ConnectionClosedOK: code = 1001 (going away), no reason
-INFO:     (&#39;127.0.0.1&#39;, 35576) - &#34;WebSocket /ws&#34; [accepted]
-INFO:     Client connected: {&#39;client&#39;: &#39;web_client&#39;}
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 153, in run_asgi
-    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py&#34;, line 45, in __call__
-    return await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/applications.py&#34;, line 102, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/middleware/errors.py&#34;, line 146, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/exceptions.py&#34;, line 58, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 550, in __call__
-    await route.handle(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 283, in handle
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 57, in app
-    await func(session)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 56, in endpoint
-    await close_client(websocket, &#39;Finalized by server&#39;)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 63, in close_client
-    await websocket.send_json({&#39;event&#39;: &#39;close&#39;, &#39;msg&#39;: msg})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 137, in send_json
-    await self.send({&#34;type&#34;: &#34;websocket.send&#34;, &#34;text&#34;: text})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 68, in send
-    await self._send(message)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 211, in asgi_send
-    await self.send(data)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 555, in send
-    await self.ensure_open()
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 803, in ensure_open
-    raise self.connection_closed_exc()
-websockets.exceptions.ConnectionClosedOK: code = 1001 (going away), no reason
-INFO:     (&#39;127.0.0.1&#39;, 35740) - &#34;WebSocket /ws&#34; [accepted]
-INFO:     Client connected: {&#39;client&#39;: &#39;web_client&#39;}
-INFO:     Client msg: {&#39;event&#39;: &#39;load_input&#39;}
-INFO:     Invalid event: load_input
-INFO:     Client msg: {&#39;event&#39;: &#39;load_input&#39;}
-INFO:     Invalid event: load_input
-INFO:     Client msg: {&#39;event&#39;: &#39;load_input&#39;}
-INFO:     Invalid event: load_input
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 153, in run_asgi
-    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py&#34;, line 45, in __call__
-    return await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/applications.py&#34;, line 102, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/middleware/errors.py&#34;, line 146, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/exceptions.py&#34;, line 58, in __call__
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 550, in __call__
-    await route.handle(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 283, in handle
-    await self.app(scope, receive, send)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 57, in app
-    await func(session)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 56, in endpoint
-    await close_client(websocket, &#39;Finalized by server&#39;)
-  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 63, in close_client
-    await websocket.send_json({&#39;event&#39;: &#39;close&#39;, &#39;msg&#39;: msg})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 137, in send_json
-    await self.send({&#34;type&#34;: &#34;websocket.send&#34;, &#34;text&#34;: text})
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 68, in send
-    await self._send(message)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 211, in asgi_send
-    await self.send(data)
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 555, in send
-    await self.ensure_open()
-  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 803, in ensure_open
-    raise self.connection_closed_exc()
-websockets.exceptions.ConnectionClosedOK: code = 1001 (going away), no reason
-INFO:     (&#39;127.0.0.1&#39;, 35822) - &#34;WebSocket /ws&#34; [accepted]
+INFO:     (&#39;127.0.0.1&#39;, 60258) - &#34;WebSocket /ws&#34; [accepted]
 INFO:     Client connected: {&#39;client&#39;: &#39;web_client&#39;}
 INFO:     Client msg: {&#39;event&#39;: &#39;load_input&#39;}
 INFO:     Invalid event: load_input
@@ -320,10 +144,62 @@ Traceback (most recent call last):
   File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 803, in ensure_open
     raise self.connection_closed_exc()
 websockets.exceptions.ConnectionClosedOK: code = 1001 (going away), no reason
+INFO:     (&#39;127.0.0.1&#39;, 32926) - &#34;WebSocket /ws&#34; [accepted]
+INFO:     Client connected: {&#39;type&#39;: &#39;CONNECTED&#39;, &#39;payload&#39;: {&#39;client&#39;: &#39;web_client&#39;}}
 INFO:     Shutting down
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 827, in transfer_data
+    message = await self.read_message()
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 895, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 971, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 1047, in read_frame
+    frame = await Frame.read(
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/framing.py&#34;, line 105, in read
+    data = await reader(2)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/asyncio/streams.py&#34;, line 721, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 153, in run_asgi
+    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py&#34;, line 45, in __call__
+    return await self.app(scope, receive, send)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/applications.py&#34;, line 102, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/middleware/errors.py&#34;, line 146, in __call__
+    await self.app(scope, receive, send)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/exceptions.py&#34;, line 58, in __call__
+    await self.app(scope, receive, send)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 550, in __call__
+    await route.handle(scope, receive, send)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 283, in handle
+    await self.app(scope, receive, send)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/routing.py&#34;, line 57, in app
+    await func(session)
+  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 56, in endpoint
+    await close_client(websocket, &#39;Finalized by server&#39;)
+  File &#34;/home/renato/github/fastexplorer/fastexplorer/explorer.py&#34;, line 63, in close_client
+    await websocket.send_json({&#39;event&#39;: &#39;close&#39;, &#39;msg&#39;: msg})
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 137, in send_json
+    await self.send({&#34;type&#34;: &#34;websocket.send&#34;, &#34;text&#34;: text})
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/starlette/websockets.py&#34;, line 68, in send
+    await self._send(message)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py&#34;, line 211, in asgi_send
+    await self.send(data)
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 555, in send
+    await self.ensure_open()
+  File &#34;/home/renato/anaconda3/envs/ml2/lib/python3.8/site-packages/websockets/protocol.py&#34;, line 803, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [22762]
+INFO:     Finished server process [6787]
 </pre>
 </div>
 </div>

@@ -9,8 +9,11 @@ index = {"Representation": "00_representation.ipynb",
          "Node.get_dict": "00_representation.ipynb",
          "Representation.to_json": "00_representation.ipynb",
          "logger": "01_explorer.ipynb",
+         "Events": "01_explorer.ipynb",
+         "clientEvents": "01_explorer.ipynb",
+         "serverEvents": "01_explorer.ipynb",
          "FastExplorer": "01_explorer.ipynb",
-         "close_client": "01_explorer.ipynb",
+         "load_input": "01_explorer.ipynb",
          "Learner.fastexplorer": "01_explorer.ipynb"}
 
 modules = ["representation.py",
