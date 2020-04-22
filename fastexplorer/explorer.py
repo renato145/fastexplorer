@@ -15,6 +15,9 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 # Cell
+#TODO EVENT ENUMS
+
+# Cell
 class FastExplorer:
     'Wrapper around `Representation` and `ProxyServer`.'
     def __init__(self, learn, host='0.0.0.0', port=8000):
@@ -36,10 +39,18 @@ class FastExplorer:
             except WebSocketDisconnect: break
 
     async def dispatch_event(self, websocket, msg):
-        event = msg['event']
-        if not hasattr(self, 'event'):
-            logging.info(f'Invalid event: {event}')
-            await websocket.send_json({'event': 'invalid_event', 'msg': event})
+        typ = msg['type']
+        payload = msg['payload']
+
+        if typ != 'socket/sendEvent':
+            logging.info(f'Invalid type: {typ!r}')
+        else:
+            event = typ.split('/')[1]
+            if not hasattr(self, event):
+                logging.info(f'Invalid event: {event!r}')
+                await websocket.send_json({'type': 'socket/socketInvalidEvent', 'payload': {'type': typ}})
+            else:
+                logging.info('Should do something here #TODO...')
 
     async def endpoint(self, websocket):
         # Open socket
@@ -49,7 +60,10 @@ class FastExplorer:
         logging.info(f'Client connected: {msg}')
 
         # Manage requests
-        await websocket.send_json({'event': 'representation_data', 'msg': self.representation.to_json()})
+        await websocket.send_json({
+                'type': 'socket/socketReceiveData',
+                'payload': { 'data': self.representation.to_json()}
+            })
         await self.handle_web_client(websocket)
 
         # Close socket
