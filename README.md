@@ -47,5 +47,5 @@ learn.fastexplorer(True)
     INFO:     Finished server process [25269]
 
 
-Finally, go to [https://renato145.github.io/fastexplorer-js/]() to visualize the model:
+Finally, go to [https://renato145.github.io/fastexplorer-js/](https://renato145.github.io/fastexplorer-js/) to visualize the model:
 ![](nbs/images/js_preview.png)
