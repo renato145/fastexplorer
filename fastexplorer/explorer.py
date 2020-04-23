@@ -42,6 +42,7 @@ class FastExplorer:
     def __init__(self, learn, host='0.0.0.0', port=8000):
         store_attr(self, 'learn,host,port')
         self.representation = learn.to_representation()
+        self.denorm = next((func.decodes for func in learn.dls.after_batch if type(func)==Normalize),noop)
         self.server = Starlette()
         self.endpoint = self.server.websocket_route('/ws')(self.endpoint)
         self.socket = None
@@ -137,7 +138,8 @@ def _write_array_header(d, version=None):
     return header
 
 def _get_numpy_bytes(x, typ):
-    a = _write_array_header(header_data_from_array_1_0(xx, typ))
+    "Transforms a numpy array into bytes and attach a `clientEvents`"
+    a = _write_array_header(header_data_from_array_1_0(x, typ))
     b = x.tobytes()
     return a+b
 
@@ -145,9 +147,11 @@ def _get_numpy_bytes(x, typ):
 @patch
 async def load_input(self:FastExplorer, websocket):
     "Sends a data sample to the client."
+    # TODO: cache inputs on a separate method
     xb,yb = self.learn.dls.one_batch()
+    xb = self.denorm(xb)
     # random
     idx = np.random.choice(xb.size(0))
-    x = xb[idx,0].cpu().numpy() # TODO
+    x = xb[idx].cpu().contiguous().numpy()
     array_bytes = _get_numpy_bytes(x, clientEvents.SEND_IMAGE_INPUT)
     await websocket.send_bytes(array_bytes)
