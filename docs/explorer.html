@@ -55,7 +55,7 @@ description: "Here we will setup the server and store the model representation o
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Events">Events<a class="anchor-link" href="#Events"> </a></h2>
+<h2 id="Event-types">Event types<a class="anchor-link" href="#Event-types"> </a></h2>
 </div>
 </div>
 </div>
@@ -77,7 +77,7 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Events" class="doc_header"><code>class</code> <code>Events</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L18" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Events</code>(<strong><code>d</code></strong>)</p>
+<h2 id="Events" class="doc_header"><code>class</code> <code>Events</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L19" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Events</code>(<strong><code>d</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -92,7 +92,14 @@ description: "Here we will setup the server and store the model representation o
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Available events:</p>
+<p><strong>Available events</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>clientEvents define the actions managed by the web client:</p>
 
 </div>
 </div>
@@ -122,7 +129,8 @@ description: "Here we will setup the server and store the model representation o
 <pre>Events (
   SEND_DATA: socket/socketReceiveData
   INVALID_EVENT: socket/socketInvalidEvent
-  SEND_INPUT: socket/socketReceiveInput
+  SEND_IMAGE_INPUT: socket/socketReceiveImageInput
+  CLOSE_CLIENT: socket/socketServerClosed
 )</pre>
 </div>
 
@@ -134,6 +142,13 @@ description: "Here we will setup the server and store the model representation o
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>serverEvents define the actions managed by the <a href="/fastexplorer/explorer#FastExplorer"><code>FastExplorer</code></a> server.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -193,7 +208,7 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="FastExplorer" class="doc_header"><code>class</code> <code>FastExplorer</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L38" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FastExplorer</code>(<strong><code>learn</code></strong>, <strong><code>host</code></strong>=<em><code>'0.0.0.0'</code></em>, <strong><code>port</code></strong>=<em><code>8000</code></em>)</p>
+<h2 id="FastExplorer" class="doc_header"><code>class</code> <code>FastExplorer</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L40" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FastExplorer</code>(<strong><code>learn</code></strong>, <strong><code>host</code></strong>=<em><code>'0.0.0.0'</code></em>, <strong><code>port</code></strong>=<em><code>8000</code></em>)</p>
 </blockquote>
 <p>Wrapper around <a href="/fastexplorer/representation#Representation"><code>Representation</code></a> and <code>ProxyServer</code>.</p>
 
@@ -225,7 +240,151 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_input" class="doc_header"><code>load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L100" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_input</code>(<strong><code>websocket</code></strong>)</p>
+<h4 id="Learner.fastexplorer" class="doc_header"><code>Learner.fastexplorer</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.fastexplorer</code>(<strong><code>reload</code></strong>=<em><code>False</code></em>, <strong><code>host</code></strong>=<em><code>'0.0.0.0'</code></em>, <strong><code>port</code></strong>=<em><code>8000</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Utils">Utils<a class="anchor-link" href="#Utils"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="header_data_from_array_1_0" class="doc_header"><code>header_data_from_array_1_0</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L112" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>header_data_from_array_1_0</code>(<strong><code>array</code></strong>, <strong><code>typ</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xb</span><span class="p">,</span><span class="n">yb</span> <span class="o">=</span> <span class="n">dls</span><span class="o">.</span><span class="n">one_batch</span><span class="p">()</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">xb</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">xx</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(28, 28)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_get_numpy_bytes</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">clientEvents</span><span class="o">.</span><span class="n">SEND_IMAGE_INPUT</span><span class="p">)[:</span><span class="mi">128</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>b&#34;\x93NUMPY\x01\x00v\x00{&#39;descr&#39;: &#39;&lt;f4&#39;, &#39;fortran_order&#39;: False, &#39;shape&#39;: (28, 28), &#39;type&#39;: &#39;socket/socketReceiveImageInput&#39;, }              \n&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Events-handlers">Events handlers<a class="anchor-link" href="#Events-handlers"> </a></h2><blockquote><p>Functions defined here are sended by the web client in upper case (eg:LOAD_INPUT)</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="load_input" class="doc_header"><code>load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_input</code>(<strong><code>websocket</code></strong>)</p>
 </blockquote>
 <p>Sends a data sample to the client.</p>
 
@@ -250,40 +409,9 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FastExplorer.load_input" class="doc_header"><code>FastExplorer.load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L100" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FastExplorer.load_input</code>(<strong><code>websocket</code></strong>)</p>
+<h4 id="FastExplorer.load_input" class="doc_header"><code>FastExplorer.load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FastExplorer.load_input</code>(<strong><code>websocket</code></strong>)</p>
 </blockquote>
 <p>Sends a data sample to the client.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="Learner.fastexplorer" class="doc_header"><code>Learner.fastexplorer</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.fastexplorer</code>(<strong><code>reload</code></strong>=<em><code>False</code></em>, <strong><code>host</code></strong>=<em><code>'0.0.0.0'</code></em>, <strong><code>port</code></strong>=<em><code>8000</code></em>)</p>
-</blockquote>
 
 </div>
 
@@ -316,14 +444,14 @@ description: "Here we will setup the server and store the model representation o
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>INFO:     Started server process [4684]
+<pre>INFO:     Started server process [14776]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [4684]
+INFO:     Finished server process [14776]
 </pre>
 </div>
 </div>
