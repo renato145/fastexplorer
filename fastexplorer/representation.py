@@ -37,10 +37,11 @@ class Node:
 
 # Cell
 @patch
-def to_representation(self:nn.Module, name=None, idx=0, xtra=None):
+def to_representation(self:nn.Module, name=None, idx=0, path=None, xtra=None):
     "Obtain information of the Module and stores it on a `Node`."
     name = ifnone(name, self.__class__.__name__)
     xtra = ifnone(xtra, {})
+    if path is not None: xtra['path'] = path
     typ = 'Sequential' if isinstance(self, nn.Sequential) else 'Module'
     nodes,links = _get_module_nodes(self)
     if hasattr(self, '_xtra'): xtra.update(self._xtra)
@@ -51,8 +52,8 @@ def _get_module_nodes(module:nn.Module):
     nodes,links = [],[]
     is_seq = isinstance(module, nn.Sequential)
     for i,(n,m) in enumerate(module.named_children()):
-        if is_seq: n = f'{n}_{m.__class__.__name__}'
-        nodes.append(m.to_representation(n,i))
+        name = f'{n}_{m.__class__.__name__}' if is_seq else n
+        nodes.append(m.to_representation(name, i, n))
         if i>0: links.append({'source':i-1, 'target':i})
 
     return nodes,links
@@ -74,7 +75,7 @@ def to_representation(self:Learner):
              self.model.to_representation(xtra={'open': True}),
              Node('Output', 0, 'Output')]
     links = [{'source':i, 'target':i+1} for i in range_of(nodes)]
-    rep = Representation(Node('Leaner', 0, 'Learner', nodes=nodes, links=links, xtra={'open': True}))
+    rep = Representation(Node('Learner', 0, 'Learner', nodes=nodes, links=links, xtra={'open': True}))
     _update_shapes(rep.data)
     for layer in layers: del(layer._xtra) # Clean
     nodes[-1].xtra['shape'] = nodes[-2].xtra.get('shape')

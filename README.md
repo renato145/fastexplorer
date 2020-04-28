@@ -27,7 +27,7 @@ path = untar_data(URLs.PETS)
 files = get_image_files(path/"images")
 def label_func(f): return f[0].isupper()
 dls = ImageDataLoaders.from_name_func(path, files, label_func, item_tfms=Resize(224))
-learn = cnn_learner(dls, resnet34)
+learn = cnn_learner(dls, resnet34, metrics=accuracy)
 ```
 
 When ready, start serving the server:
@@ -37,14 +37,16 @@ When ready, start serving the server:
 learn.fastexplorer(True)
 ```
 
-    INFO:     Started server process [25269]
+    INFO:     To visualize the model information, go to:
+    INFO:     https://renato145.github.io/fastexplorer-js
+    INFO:     Started server process [30653]
     INFO:     Waiting for application startup.
     INFO:     Application startup complete.
     INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
     INFO:     Shutting down
     INFO:     Waiting for application shutdown.
     INFO:     Application shutdown complete.
-    INFO:     Finished server process [25269]
+    INFO:     Finished server process [30653]
 
 
 Finally, go to [https://renato145.github.io/fastexplorer-js/](https://renato145.github.io/fastexplorer-js/) to visualize the model:

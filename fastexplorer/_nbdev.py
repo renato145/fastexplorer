@@ -15,7 +15,8 @@ index = {"Representation": "00_representation.ipynb",
          "FastExplorer": "01_explorer.ipynb",
          "Learner.fastexplorer": "01_explorer.ipynb",
          "header_data_from_array_1_0": "01_explorer.ipynb",
-         "load_input": "01_explorer.ipynb"}
+         "load_input": "01_explorer.ipynb",
+         "get_heatmap": "01_explorer.ipynb"}
 
 modules = ["representation.py",
            "explorer.py"]
