@@ -99,7 +99,7 @@ description: "Here we will setup the server and store the model representation o
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>clientEvents define the actions managed by the web client:</p>
+<p>clientEvents define the actions managed by the web client (send from python, executed by js):</p>
 
 </div>
 </div>
@@ -147,7 +147,7 @@ description: "Here we will setup the server and store the model representation o
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>serverEvents define the actions managed by the <a href="/fastexplorer/explorer#FastExplorer"><code>FastExplorer</code></a> server.</p>
+<p>serverEvents define the actions managed by the <a href="/fastexplorer/explorer#FastExplorer"><code>FastExplorer</code></a> server (send by js, executed by python).</p>
 
 </div>
 </div>
@@ -296,6 +296,31 @@ description: "Here we will setup the server and store the model representation o
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_numpy_bytes" class="doc_header"><code>get_numpy_bytes</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L147" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_numpy_bytes</code>(<strong><code>x</code></strong>, <strong><code>typ</code></strong>, <strong><code>xtra</code></strong>=<em><code>None</code></em>)</p>
+</blockquote>
+<p>Transforms a numpy array into bytes and attach a <a href="/fastexplorer/explorer#clientEvents"><code>clientEvents</code></a></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
@@ -318,39 +343,6 @@ description: "Here we will setup the server and store the model representation o
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(28, 28)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_get_numpy_bytes</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">clientEvents</span><span class="o">.</span><span class="n">SEND_IMAGE_INPUT</span><span class="p">)[:</span><span class="mi">256</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>b&#34;{&#39;type&#39;: &#39;socket/socketReceiveImageInput&#39;, }                                                                                    \x93NUMPY\x01\x00v\x00{&#39;descr&#39;: &#39;&lt;f4&#39;, &#39;fortran_order&#39;: False, &#39;shape&#39;: (28, 28), }                                                        \n&#34;</pre>
 </div>
 
 </div>
@@ -434,7 +426,7 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_input" class="doc_header"><code>load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L195" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_input</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="load_input" class="doc_header"><code>load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_input</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Sends a data sample to the client.</p>
 
@@ -459,7 +451,7 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FastExplorer.load_input" class="doc_header"><code>FastExplorer.load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L195" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FastExplorer.load_input</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="FastExplorer.load_input" class="doc_header"><code>FastExplorer.load_input</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FastExplorer.load_input</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Sends a data sample to the client.</p>
 
@@ -491,7 +483,7 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_heatmap" class="doc_header"><code>get_heatmap</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L209" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_heatmap</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>)</p>
+<h4 id="get_heatmap" class="doc_header"><code>get_heatmap</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_heatmap</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>)</p>
 </blockquote>
 <p>Sends the heatmap for a particular layer.</p>
 
@@ -516,7 +508,7 @@ description: "Here we will setup the server and store the model representation o
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="FastExplorer.get_heatmap" class="doc_header"><code>FastExplorer.get_heatmap</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L209" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FastExplorer.get_heatmap</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>)</p>
+<h4 id="FastExplorer.get_heatmap" class="doc_header"><code>FastExplorer.get_heatmap</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/explorer.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>FastExplorer.get_heatmap</code>(<strong><code>websocket</code></strong>, <strong><code>payload</code></strong>)</p>
 </blockquote>
 <p>Sends the heatmap for a particular layer.</p>
 
