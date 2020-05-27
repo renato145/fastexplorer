@@ -39,14 +39,14 @@ learn.fastexplorer(True)
 
     INFO:     To visualize the model information, go to:
     INFO:     https://renato145.github.io/fastexplorer-js
-    INFO:     Started server process [30653]
+    INFO:     Started server process [12134]
     INFO:     Waiting for application startup.
     INFO:     Application startup complete.
     INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
     INFO:     Shutting down
     INFO:     Waiting for application shutdown.
     INFO:     Application shutdown complete.
-    INFO:     Finished server process [30653]
+    INFO:     Finished server process [12134]
 
 
 Finally, go to [https://renato145.github.io/fastexplorer-js/](https://renato145.github.io/fastexplorer-js/) to visualize the model:
