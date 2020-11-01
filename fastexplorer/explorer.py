@@ -4,7 +4,7 @@ __all__ = ['logger', 'Events', 'clientEvents', 'serverEvents', 'FastExplorer', '
            'get_numpy_bytes', 'load_input', 'get_heatmap']
 
 # Cell
-from fastai2.vision.all import *
+from fastai.vision.all import *
 from .representation import *
 from starlette.applications import Starlette
 from starlette.endpoints import WebSocketEndpoint
@@ -43,7 +43,7 @@ serverEvents = Events({
 class FastExplorer:
     'Wrapper around `Representation` and `ProxyServer`.'
     def __init__(self, learn, host='0.0.0.0', port=8000):
-        store_attr(self, 'learn,host,port')
+        store_attr('learn,host,port', self)
         self.representation = learn.to_representation()
         self.denorm = next((func.decodes for func in learn.dls.after_batch if type(func)==Normalize),noop)
         self.server = Starlette()
@@ -108,7 +108,6 @@ class FastExplorer:
         logging.info(f'To visualize the model information, go to:')
         logging.info(f'https://renato145.github.io/fastexplorer-js')
         uvicorn.run(self.server, host=self.host, port=self.port)
-
 
 # Cell
 @patch

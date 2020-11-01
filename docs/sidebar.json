@@ -1,8 +1,8 @@
 {
   "fastexplorer": {
     "Overview": "/",
-    "Representation": "/representation",
-    "Fast Explorer": "/explorer",
-    "Loss Landscape": "/loss_landscape"
+    "Representation": "representation.html",
+    "Fast Explorer": "explorer.html",
+    "Loss Landscape": "loss_landscape.html"
   }
 }

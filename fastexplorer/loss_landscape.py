@@ -3,7 +3,7 @@
 __all__ = ['get_loss_landscape']
 
 # Cell
-from fastai2.vision.all import *
+from fastai.vision.all import *
 from .representation import *
 from .explorer import *
 
@@ -24,7 +24,7 @@ def _get_random_direction(m):
 
     for d,w in zip(direction, weights):
         if d.dim() <= 1: d.fill_(0)
-        else           : _normalize_direction(d, w)
+        else           : _normalize_direction(d.to(w.device), w)
 
     return direction
 

@@ -3,7 +3,7 @@
 __all__ = ['Representation', 'Node']
 
 # Cell
-from fastai2.vision.all import *
+from fastai.vision.all import *
 
 # Cell
 class Representation:
@@ -15,7 +15,7 @@ class Representation:
 class Node:
     "Represents a Module or Parameter."
     def __init__(self, name, idx, typ, obj=None, nodes=None, links=None, xtra=None):
-        store_attr(self, 'name,idx,typ,obj')
+        store_attr('name,idx,typ,obj', self)
         self.nodes = ifnone(nodes, [])
         self.links = ifnone(links, [])
         self.xtra  = ifnone(xtra , {})

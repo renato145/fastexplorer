@@ -11,13 +11,13 @@ entries:
       url: /
     - output: web,pdf
       title: Representation
-      url: /representation
+      url: representation.html
     - output: web,pdf
       title: Fast Explorer
-      url: /explorer
+      url: explorer.html
     - output: web,pdf
       title: Loss Landscape
-      url: /loss_landscape
+      url: loss_landscape.html
     output: web
     title: fastexplorer
   output: web
