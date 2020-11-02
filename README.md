@@ -17,7 +17,7 @@ This will allow to use tools like d3, react and threejs to visualize NN informat
 
 ## How to use
 
-```
+```python
 # all_slow
 %reload_ext autoreload
 %autoreload 2
@@ -25,7 +25,7 @@ This will allow to use tools like d3, react and threejs to visualize NN informat
 
 Load you Learner as usual and import fastexplorer:
 
-```
+```python
 from fastai.vision.all import *
 from fastexplorer.all import *
 
@@ -34,12 +34,11 @@ files = get_image_files(path/"images")
 def label_func(f): return f[0].isupper()
 dls = ImageDataLoaders.from_name_func(path, files, label_func, item_tfms=Resize(224))
 learn = cnn_learner(dls, resnet34, metrics=accuracy)
-learn.model.to('cuda');
 ```
 
 When ready, start serving the server:
 
-```
+```python
 #srv
 learn.fastexplorer(True)
 ```

@@ -67,7 +67,7 @@ def to_representation(self:Learner):
         params,trainable = total_params(m)
         m._xtra = {'params': params, 'trainable': trainable, 'shape': o.shape}
 
-    model = self.model
+    model = self.model.to(xb.device)
     layers = flatten_model(model)
     with Hooks(layers, _get_info) as h: model.eval()(xb)
 

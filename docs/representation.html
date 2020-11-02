@@ -2,11 +2,13 @@
 
 title: Representation
 
+
 keywords: fastai
 sidebar: home_sidebar
 
 summary: "Functions and utilities to get representations of pytorch/fastai objects."
 description: "Functions and utilities to get representations of pytorch/fastai objects."
+nb_path: "nbs/00_representation.ipynb"
 ---
 <!--
 
@@ -44,7 +46,6 @@ description: "Functions and utilities to get representations of pytorch/fastai o
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST_TINY</span><span class="p">)</span>
 <span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">model</span>
 </pre></div>
 
     </div>
@@ -67,13 +68,6 @@ description: "Functions and utilities to get representations of pytorch/fastai o
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -149,12 +143,55 @@ description: "Functions and utilities to get representations of pytorch/fastai o
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="Module.to_representation" class="doc_header"><code>Module.to_representation</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/representation.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Module.to_representation</code>(<strong><code>name</code></strong>=<em><code>None</code></em>, <strong><code>idx</code></strong>=<em><code>0</code></em>, <strong><code>path</code></strong>=<em><code>None</code></em>, <strong><code>xtra</code></strong>=<em><code>None</code></em>)</p>
+</blockquote>
+<p>Obtain information of the Module and stores it on a <a href="/fastexplorer/representation.html#Node"><code>Node</code></a>.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="Learner.to_representation" class="doc_header"><code>Learner.to_representation</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/representation.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Learner.to_representation</code>()</p>
+</blockquote>
+<p>Gets a representation of the Learner to be passed to a web client.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -182,7 +219,7 @@ description: "Functions and utilities to get representations of pytorch/fastai o
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#34;(Node): Leaner, type: Learner, idx=0\nxtra: {&#39;open&#39;: True, &#39;shape&#39;: None}\nnodes: [\n  (Node): Input, type: Input, idx=0\nxtra: {&#39;shape&#39;: [64, 3, 28, 28]}\n  (Node): Sequential, type: Sequential, idx=0\nxtra: {&#39;open&#39;: True, &#39;shape&#39;: torch.Size([64, 2])}\nnodes: [\n  (Node): 0_Sequential, type: Sequential, i&#34;</pre>
+<pre>&#34;(Node): Learner, type: Learner, idx=0\nxtra: {&#39;open&#39;: True, &#39;shape&#39;: None}\nnodes: [\n  (Node): Input, type: Input, idx=0\nxtra: {&#39;shape&#39;: [64, 3, 28, 28]}\n  (Node): Sequential, type: Sequential, idx=0\nxtra: {&#39;open&#39;: True, &#39;shape&#39;: torch.Size([64, 2])}\nnodes: [\n  (Node): 0_Sequential, type: Sequential, &#34;</pre>
 </div>
 
 </div>
@@ -213,7 +250,7 @@ description: "Functions and utilities to get representations of pytorch/fastai o
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="Node.get_dict" class="doc_header"><code>Node.get_dict</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/representation.py#L92" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Node.get_dict</code>()</p>
 </blockquote>
-<p>Gets the dictionary of the <a href="/fastexplorer/representation#Node"><code>Node</code></a>.</p>
+<p>Gets the dictionary of the <a href="/fastexplorer/representation.html#Node"><code>Node</code></a>.</p>
 
 </div>
 
@@ -245,7 +282,7 @@ description: "Functions and utilities to get representations of pytorch/fastai o
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="Representation.to_json" class="doc_header"><code>Representation.to_json</code><a href="https://github.com/renato145/fastexplorer/tree/master/fastexplorer/representation.py#L102" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>Representation.to_json</code>()</p>
 </blockquote>
-<p>Gets the seriable json from the Leaner <a href="/fastexplorer/representation#Representation"><code>Representation</code></a>.</p>
+<p>Gets the seriable json from the Leaner <a href="/fastexplorer/representation.html#Representation"><code>Representation</code></a>.</p>
 
 </div>
 
@@ -279,7 +316,7 @@ description: "Functions and utilities to get representations of pytorch/fastai o
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;{&#34;name&#34;: &#34;Leaner&#34;, &#34;type&#34;: &#34;Learner&#34;, &#34;index&#34;: 0, &#34;nodes&#34;: [{&#34;name&#34;: &#34;Input&#34;, &#34;type&#34;: &#34;Input&#34;, &#34;index&#34;: 0, &#34;xtra&#34;: {&#34;shape&#34;: [64, 3, 28, 28]}}, {&#34;name&#34;: &#34;Sequential&#34;, &#34;type&#34;: &#34;Sequential&#34;, &#34;index&#34;: 0, &#34;nodes&#34;: [{&#34;name&#34;: &#34;0_Sequential&#34;, &#34;type&#34;: &#34;Sequential&#34;, &#34;index&#34;: 0, &#34;nodes&#34;: [{&#34;name&#34;: &#34;0_Conv2d&#34;,&#39;</pre>
+<pre>&#39;{&#34;name&#34;: &#34;Learner&#34;, &#34;type&#34;: &#34;Learner&#34;, &#34;index&#34;: 0, &#34;nodes&#34;: [{&#34;name&#34;: &#34;Input&#34;, &#34;type&#34;: &#34;Input&#34;, &#34;index&#34;: 0, &#34;xtra&#34;: {&#34;shape&#34;: [64, 3, 28, 28]}}, {&#34;name&#34;: &#34;Sequential&#34;, &#34;type&#34;: &#34;Sequential&#34;, &#34;index&#34;: 0, &#34;nodes&#34;: [{&#34;name&#34;: &#34;0_Sequential&#34;, &#34;type&#34;: &#34;Sequential&#34;, &#34;index&#34;: 0, &#34;nodes&#34;: [{&#34;name&#34;: &#34;0_Conv2d&#34;&#39;</pre>
 </div>
 
 </div>

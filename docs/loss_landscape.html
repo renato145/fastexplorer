@@ -2,11 +2,13 @@
 
 title: Loss Landscape
 
+
 keywords: fastai
 sidebar: home_sidebar
 
 summary: "Use the idea of https://github.com/tomgoldstein/loss-landscape to visualize the loss function."
 description: "Use the idea of https://github.com/tomgoldstein/loss-landscape to visualize the loss function."
+nb_path: "nbs/02_loss_landscape.ipynb"
 ---
 <!--
 
@@ -41,9 +43,8 @@ description: "Use the idea of https://github.com/tomgoldstein/loss-landscape to 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#srv</span>
-<span class="c1"># learn.fine_tune(2)</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;resnet34&#39;</span><span class="p">);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># learn.fine_tune(2)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;resnet34&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -56,62 +57,9 @@ description: "Use the idea of https://github.com/tomgoldstein/loss-landscape to 
 <div class="output_area">
 
 
-<div class="output_html rendered_html output_subarea ">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: left;">
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>accuracy</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.139714</td>
-      <td>0.021332</td>
-      <td>0.993911</td>
-      <td>00:13</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: left;">
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>accuracy</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.068502</td>
-      <td>0.030123</td>
-      <td>0.989175</td>
-      <td>00:16</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0.029429</td>
-      <td>0.009352</td>
-      <td>0.996617</td>
-      <td>00:16</td>
-    </tr>
-  </tbody>
-</table>
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;fastai.learner.Learner at 0x7f09d50b89a0&gt;</pre>
 </div>
 
 </div>
@@ -204,13 +152,6 @@ description: "Use the idea of https://github.com/tomgoldstein/loss-landscape to 
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
@@ -235,12 +176,18 @@ description: "Use the idea of https://github.com/tomgoldstein/loss-landscape to 
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#srv</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">fastexplorer</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fastexplorer</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -253,16 +200,24 @@ description: "Use the idea of https://github.com/tomgoldstein/loss-landscape to 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>INFO:     To visualize the model information, go to:
-INFO:     https://renato145.github.io/fastexplorer-js
-INFO:     Started server process [14881]
+<pre>INFO:root:To visualize the model information, go to:
+INFO:root:https://renato145.github.io/fastexplorer-js
+INFO:     Started server process [1705]
+INFO:uvicorn.error:Started server process [1705]
 INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
 INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
 INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [14881]
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1705]
+INFO:uvicorn.error:Finished server process [1705]
 </pre>
 </div>
 </div>
